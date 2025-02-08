@@ -83,5 +83,5 @@ if __name__ == "__main__":
             lr, 
             "model",
             registered_model_name="ElasticnetWineModel",
-            serialize_sklearn=True
+            # serialize_sklearn=True
         )
