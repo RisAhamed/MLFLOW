@@ -75,8 +75,9 @@ if __name__ == "__main__":
         mlflow.log_metric("r2", r2)
         mlflow.log_metric("mae", mae)
 
-        # Set default MLflow tracking URI
-        mlflow.set_tracking_uri("http://localhost:5000")
+        # Use local file system tracking
+        mlflow.set_tracking_uri("")  # Empty string defaults to local ./mlruns directory
+        # Or you can completely remove the set_tracking_uri call
 
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
