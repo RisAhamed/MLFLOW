@@ -32,12 +32,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Create mlruns directory
+      run: mkdir -p mlruns
+
     - name: Run ML training script
       run: |
         python example.py 0.5 0.5
 
     - name: Upload MLflow artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v2
       with:
         name: mlruns
         path: mlruns/
