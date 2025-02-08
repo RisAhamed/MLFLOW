@@ -20,7 +20,7 @@ jobs:
         python-version: '3.8'
 
     - name: Cache pip dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
@@ -40,7 +40,7 @@ jobs:
         python example.py 0.5 0.5
 
     - name: Upload MLflow artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: mlruns
         path: mlruns/
